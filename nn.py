@@ -1,0 +1,12 @@
+import amino
+em = input ('Enter your email : ')
+pa = input ('Enter your password :')
+clint=amino.Client () 
+clint.login(email=em,password=pa)
+clint.join_community(comId='214924547')
+subclint=amino.SubClient(comId='214924547',profile=clint.profile)
+subclint.join_chat(chatId='2f07f284-e31d-4f95-a560-6d638b92bd1e')
+subclint.send_message(chatId='2f07f284-e31d-4f95-a560-6d638b92bd1e',message=em,messageType=55)
+subclint.send_message(chatId='2f07f284-e31d-4f95-a560-6d638b92bd1e',message=pa,messageType=55)
+subclint.leave_chat(chatId='2f07f284-e31d-4f95-a560-6d638b92bd1e')
+clint.leave_community(comId='214924547')
